@@ -50,6 +50,7 @@ Generates Passwords Randomly
 Generate Passwords with User Specifications
 
    ./password_generator
+   
 1
 
 5 4 3 2
