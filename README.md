@@ -31,7 +31,7 @@ Clone the repository:
    ```
 1. Compile the program
 ```bash
-  gcc password_generator.c -o password_generator
+  gcc main.c -o password_generator
   ```
 
 3. Run the executable
