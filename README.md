@@ -44,9 +44,11 @@ Clone the repository:
 ### Usage Examples
 
 Generates Passwords Randomly
+
 ./password_generator
 
 Generate Passwords with User Specifications
+
 ./password_generator
 1
 5 4 3 2
