@@ -30,17 +30,20 @@ Clone the repository:
    git clone https://github.com/OnlyKev/password-generator.git
    ```
 1. Compile the program
+```bash
   gcc password_generator.c -o password_generator
+  ```
 
-2. Run the executable
+3. Run the executable
+```bash
   ./password_generator
+```
 
-3. Follow the on-screen prompts to generate passwords
+5. Follow the on-screen prompts to generate passwords
 
 ### Usage Examples
 
 Generates Passwords Randomly
-
 ./password_generator
 
 Generate Passwords with User Specifications
