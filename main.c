@@ -10,27 +10,34 @@ Date: 11/19/23
 
 // our password struct
 typedef struct password{
-    int numbers;
-    int lowercaseCharacters;
-    int uppercaseCharacters;
-    int specialCharacters;
+   unsigned int numbers;
+   unsigned int lowercaseCharacters;
+   unsigned int uppercaseCharacters;
+   unsigned int specialCharacters;
     const char* charset;
-    int length;
+   unsigned int length;
 } Password;
 
+
+//Pre-condition: Takes in the struct of password
+//Post-condition: Init password struct with default values
 void initPassword(struct password *gen){
     gen->numbers = 0;
     gen->lowercaseCharacters = 0;
     gen->uppercaseCharacters = 0;
     gen->specialCharacters = 0;
     gen->charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*";
+    gen->length = 0;
 }
 
-void generatePassword(struct password *gen, char* password, int num, int upper, int lower, int special){
 
-   int totalLen = num + upper + lower + special;
+//Pre-condition: Takes in password struct, character pointer password, and 4 integer values
+//Post-condition: Randomly construct a password using the parameters givin and modify password using a pointer.
+void generatePassword(struct password *gen, char* password, unsigned int num, unsigned int upper, unsigned int lower, unsigned int special){
+
+  unsigned int totalLen = num + upper + lower + special;
    gen->length = totalLen;
-   int i = 0, j;
+  unsigned int i = 0, j;
    j = rand() % 3; // for more randomness
 
    switch (j)
@@ -192,12 +199,11 @@ void clearKeyboardBuffer(void)
 
 int main(int argc, char** argv){
 
-    int choice;
+        int choice;
         Password fPassword; // casting to the known type
         srand((unsigned int) time(NULL)); // for seeding
-        int noc = 0;
-        int num, upper, lower, special;
-        char password[fPassword.length + 1];
+       unsigned int noc = 0;
+       unsigned int num, upper, lower, special;
 
         printf("\t---------------------------------------------\n");
         printf("\t_______________GENERATE_PASSWORD_____________\n");
@@ -206,6 +212,7 @@ int main(int argc, char** argv){
         printf("Hello user, You have been granted the ability to generate a password. Please enter a number in its corresponding order. \nex. number, uppercaseLetter, lowercaseLetter, SpecialCharacter | 5 6 3 4\n");
         printf("\n");
         initPassword(&fPassword);
+        char password[fPassword.length + 1];
         printf("\n");
         printf("enter now or have our 'AI' generate one for you. 1 = user, 0 = AI\n");
         scanf("%d", &choice);
